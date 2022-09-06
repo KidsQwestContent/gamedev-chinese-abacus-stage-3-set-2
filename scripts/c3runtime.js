@@ -3835,9 +3835,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Exps.AngleAt,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.System.Acts.AddVar,
 		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.Sprite.Exps.PickedCount,
+		C3.Plugins.System.Cnds.Compare,
 		C3.Behaviors.Tween.Cnds.OnTweensFinished,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Behaviors.Tween.Cnds.OnAnyTweensFinished,
@@ -3845,6 +3845,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
+		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.System.Acts.GoToLayout
@@ -3894,6 +3895,7 @@ self.C3_JsPropNameTable = [
 	{beads_asc_row: 0},
 	{beads_dsc_row: 0},
 	{beads_col: 0},
+	{start_move: 0},
 	{game_state: 0},
 	{i: 0}
 ];
@@ -4019,6 +4021,10 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar_Family();
 		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => v0.GetValue();
+		},
 		() => 200,
 		() => "earth",
 		p => {
@@ -4027,11 +4033,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 225,
 		() => -45,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
-		},
-		() => 1,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -4044,6 +4045,10 @@ self.C3_ExpressionFuncs = [
 			return () => ((n0.ExpObject() + ((n1.ExpObject() - 2) * n2.ExpInstVar())) - 20);
 		},
 		() => 0.125,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() + 1);
+		},
 		() => 45,
 		() => 135,
 		p => {
@@ -4064,6 +4069,7 @@ self.C3_ExpressionFuncs = [
 		() => "error",
 		() => 0.725,
 		() => "over",
+		() => 1,
 		() => 3,
 		() => 4,
 		() => 2,

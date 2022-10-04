@@ -62,13 +62,3 @@ html, body, canvas {
 }
 
 
-@font-face {
-	font-family: 'bobofont-regular-webfont';
-	src: url('fonts/bobofont-regular-webfont.woff2') format('woff2'), url('fonts/bobofont-regular-webfont.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'malwoon-webfont';
-	src: url('fonts/malwoon-webfont.woff2') format('woff2'), url('fonts/malwoon-webfont.woff') format('woff');
-}
-
